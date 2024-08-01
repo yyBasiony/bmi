@@ -67,14 +67,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff333244),
+        backgroundColor: Color(0xff8B8C9E),
         title: Text(
           "BMI Calculator",
           style: TextStyle(color: Color(0xffFFFFFF), fontSize: 20),
         ),
         centerTitle: true,
       ),
-      backgroundColor: Color(0xFF24263B),
+      backgroundColor: Color(0xFFd9d4e7),
       body: Column(
         children: [
           Expanded(
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: isMale ? Color(0xFF24263B) : Color(0xff333244),
+                          color: isMale ? Color(0xFFd9d4e7) : Color(0xFFfec7d7),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: isMale ? Color(0xff333244) : Color(0xFF24263B),
+                          color: isMale ? Color(0xFFfec7d7) : Color(0xFFd9d4e7),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(4.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xff333244),
+                  color: Color(0xfffec7d7),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                           height = value;
                         });
                       },
-                      activeColor: Color(0xFFE83D67),
+                      activeColor: Color(0xff8B8C9E),
                       inactiveColor: Color(0xffFFFFFF),
                     ),
                   ],
@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xff333244),
+                        color: Color(0xfffec7d7),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Column(
@@ -278,7 +278,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xff333244),
+                        color: Color(0xfffec7d7),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Column(
@@ -345,33 +345,41 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            height: 65,
-            width: double.infinity,
-            color: const Color(0xffE83D67),
-            child: MaterialButton(
-              onPressed: () {
-                double bmi = calculateBMI();
-                String resultText = getResultText(bmi);
-                String interpretation = getInterpretation(bmi);
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xff8B8C9E),
+                borderRadius: BorderRadius.circular(15),
+              ),
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ResultPage(
-                      bmi: bmi,
-                      resultText: resultText,
-                      interpretation: interpretation,
+              height: 65,
+              width: double.infinity,
+              //color: const Color(0xff8B8C9E),
+              child: MaterialButton(
+                onPressed: () {
+                  double bmi = calculateBMI();
+                  String resultText = getResultText(bmi);
+                  String interpretation = getInterpretation(bmi);
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultPage(
+                        bmi: bmi,
+                        resultText: resultText,
+                        interpretation: interpretation,
+                      ),
                     ),
-                  ),
-                );
-              },
-              child: const Text(
-                "Calculate",
-                style: TextStyle(fontSize: 20, color: Color(0xffFFFFFF)),
+                  );
+                },
+                child: const Text(
+                  "Calculate",
+                  style: TextStyle(fontSize: 20, color: Color(0xffFFFFFF)),
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );
