@@ -62,7 +62,7 @@ class ResultPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 170,),
+          SizedBox(height: 150,),
           Container(
             height: 65,
             width: double.infinity,
