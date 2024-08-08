@@ -1,4 +1,4 @@
-import 'package:bmi/home_page.dart';
+import 'package:bmi/splash_screen.dart';
 import 'package:flutter/material.dart';
 class BMI extends StatelessWidget {
   const BMI({super.key});
@@ -7,7 +7,7 @@ class BMI extends StatelessWidget {
   Widget build(BuildContext context) {
      return const MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: HomePage(),
+       home: SplashScreen(),
     );
   }
 }
